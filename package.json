@@ -2,5 +2,11 @@
   "name": "@craigmiller160/card-game-server",
   "version": "1.0.0-beta",
   "main": "index.js",
-  "author": "craigmiller160"
+  "author": "craigmiller160",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "https://craigmiller160.ddns.net:30003/repository/npm-private/"
+  }
 }
