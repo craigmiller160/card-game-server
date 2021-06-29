@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { constants } from 'crypto';
+import {ServerOptions} from 'https';
 
 const ciphers = [
 	'ECDHE-ECDSA-AES256-GCM-SHA384',
@@ -15,15 +16,11 @@ const ciphers = [
 	'ECDHE-RSA-AES128-SHA256'
 ];
 
-const tlsProps = {
+const tlsProps: ServerOptions = {
 	key: fs.readFileSync(path.resolve(__dirname, '../cert/key.pem')),
 	cert: fs.readFileSync(path.resolve(__dirname, '../cert/certificate.pem')),
 	ciphers: ciphers.join(';'),
-	secureProtocol:
-		constants.SSL_OP_NO_TLSv1_1 |
-		constants.SSL_OP_NO_TLSv1 |
-		constants.SSL_OP_NO_SSLv3 |
-		constants.SSL_OP_NO_SSLv2
+	minVersion: 'TLSv1.2'
 };
 
 export default tlsProps;
