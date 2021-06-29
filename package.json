@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "craigmiller160",
   "files": [
-    "src"
+    "build"
   ],
   "scripts": {
     "lint": "es-lint-scripts ts"
@@ -13,6 +13,7 @@
     "registry": "https://craigmiller160.ddns.net:30003/repository/npm-private/"
   },
   "devDependencies": {
-    "@craigmiller160/es-lint-config": "^1.1.0-beta.1"
+    "@craigmiller160/es-lint-config": "^1.1.0-beta.1",
+    "typescript": "^4.3.4"
   }
 }
