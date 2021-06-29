@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { constants } from 'crypto';
-import {ServerOptions} from 'https';
+import { ServerOptions } from 'https';
 
 const ciphers = [
 	'ECDHE-ECDSA-AES256-GCM-SHA384',

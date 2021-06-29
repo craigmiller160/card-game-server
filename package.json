@@ -7,6 +7,8 @@
     "build"
   ],
   "scripts": {
+    "build": "es-lint-scripts ts && tsc",
+    "forceBuild": "tsc",
     "lint": "es-lint-scripts ts"
   },
   "publishConfig": {
