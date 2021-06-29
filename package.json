@@ -8,6 +8,7 @@
     ".yalc"
   ],
   "scripts": {
+    "start": "env-cmd ts-node ./src",
     "build": "es-lint-scripts ts && tsc",
     "forceBuild": "tsc",
     "lint": "es-lint-scripts ts"
@@ -24,8 +25,10 @@
     "typescript": "^4.3.4"
   },
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "https": "^1.0.0",
-    "pino": "^6.11.3"
+    "pino": "^6.11.3",
+    "pino-pretty": "^5.1.0"
   }
 }
