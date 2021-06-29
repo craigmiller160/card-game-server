@@ -1,6 +1,8 @@
 import { MongoClient } from 'mongodb';
 import handleMongoPasswordEnv from './handleMongoPasswordEnv';
 import logger from '../logger';
+import * as TE from 'fp-ts/TaskEither';
+import handleUnknownError from '../utils/handleUnknownError';
 
 const getConfig = () => ({
     mongoUser: process.env.MONGO_USER,
@@ -35,4 +37,9 @@ const connect = (handler: any) => {
     };
 
     logger.debug(`Opening MongoDB connection: ${connectString}`);
+
+    TE.tryCatch(
+        () => MongoClient.connect(connectString, options),
+        handleUnknownError
+    );
 };
