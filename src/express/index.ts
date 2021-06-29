@@ -1,6 +1,7 @@
 import express from 'express';
 import https from 'https';
 import tlsProps from './prepareTlsProps';
+import logger from '../logger';
 
 const app = express();
 if (!process.env.PORT) {
@@ -11,7 +12,7 @@ const port = parseInt(process.env.PORT, 10);
 const startExpressServer = () => {
     const server = https.createServer(tlsProps, app);
     server.listen(port, () => {
-        // TODO add logger
+        logger.info(`Express server running on port ${port}`);
     });
 };
 
