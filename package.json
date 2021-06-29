@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@craigmiller160/es-lint-config": "^1.1.0-beta.1",
+    "@types/node": "^15.12.5",
     "typescript": "^4.3.4"
   }
 }
